@@ -2,6 +2,56 @@
 {% load static %}
 {% block title %}Recetas - Recetas {% endblock %}
 {% block content %}
-<h1>Recetas</h1>
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Recetas</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <a href="{% url 'arroz-leche' %}" class="text-decoration-none text-dark">
+                    {% if arroz_con_leche.imagen %}
+                    <img src="{{ arroz_con_leche.imagen.url }}" class="card-img-top img-fluid" alt="{{ arroz_con_leche.nombre }}" style="object-fit: cover; height: 220px;">
+                    {% else %}
+                    <img src="{% static 'img/placeholder.png' %}" class="card-img-top img-fluid" alt="Sin imagen" style="object-fit: cover; height: 220px;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ arroz_con_leche.nombre }}</h5>
+                        <p class="card-text">{{ arroz_con_leche.descripcion|truncatewords:20 }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <a href="{% url 'Macarrones' %}" class="text-decoration-none text-dark">
+                    {% if macarrones.imagen %}
+                    <img src="{{ macarrones.imagen.url }}" class="card-img-top img-fluid" alt="{{ macarrones.nombre }}" style="object-fit: cover; height: 220px;">
+                    {% else %}
+                    <img src="{% static 'img/placeholder.png' %}" class="card-img-top img-fluid" alt="Sin imagen" style="object-fit: cover; height: 220px;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ macarrones.nombre }}</h5>
+                        <p class="card-text">{{ macarrones.descripcion|truncatewords:20 }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <a href="{% url 'panqueques' %}" class="text-decoration-none text-dark">
+                    {% if panqueques.imagen %}
+                    <img src="{{ panqueques.imagen.url }}" class="card-img-top img-fluid" alt="{{ panqueques.nombre }}" style="object-fit: cover; height: 220px;">
+                    {% else %}
+                    <img src="{% static 'img/placeholder.png' %}" class="card-img-top img-fluid" alt="Sin imagen" style="object-fit: cover; height: 220px;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ panqueques.nombre }}</h5>
+                        <p class="card-text">{{ panqueques.descripcion|truncatewords:20 }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

@@ -37,13 +37,24 @@
                             <textarea class="form-control" id="mensajeTextarea" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                            <button type="submit" class="btn btn-primary" onclick="mostrarMensaje(event)">Enviar Mensaje</button>
                         </div>
                     </form>
+                    <div id="mensajeEnviado" class="alert alert-success mt-3" style="display: none;">
+                        ¡Formulario enviado!
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function mostrarMensaje(event) {
+        event.preventDefault(); // Previene la recarga de la página
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('mensajeEnviado').style.display = 'block';
+    }
+</script>
 
 {% endblock %}
