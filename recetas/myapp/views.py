@@ -26,6 +26,7 @@ def contacto(request):
         return render(request, 'contacto.html', {'nombre': nombre})
     return render(request, 'contacto.html')
 
+# Definimos las vistas para cada receta
 def arroz_leche(request):
     receta = Receta.objects.get(nombre='Arroz con leche')  # Ajusta el nombre si es diferente
     return render(request, 'arroz-leche.html', {'receta': receta})
