@@ -1,7 +1,49 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 {% block title %}Contacto - Recetas {% endblock %}
 {% block content %}
-    <h1>Inicio contacto</h1>
-    
-{% endblock %} 
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">¡Contáctanos!</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-5">
+                    <h5 class="card-title mb-4">¿Tienes alguna pregunta o sugerencia?</h5>
+                    <p class="card-text mb-3">¡Estamos aquí para ayudarte! Utiliza el formulario a continuación o contáctanos directamente a través de los siguientes medios:</p>
+
+                    <div class="d-flex justify-content-around mb-4">
+                        <div>
+                            <i class="fas fa-envelope fa-2x text-primary"></i>
+                            <p>info@misrecetas.net</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone fa-2x text-success"></i>
+                            <p>+56 9 1234 5678</p>
+                        </div>
+                    </div>
+
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="nombreInput" class="form-label">Tu Nombre</label>
+                            <input type="text" class="form-control" id="nombreInput" placeholder="Ingresa tu nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Tu Correo Electrónico</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="nombre@ejemplo.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensajeTextarea" class="form-label">Tu Mensaje</label>
+                            <textarea class="form-control" id="mensajeTextarea" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
